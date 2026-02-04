@@ -24,13 +24,16 @@ class ListItemDrawer extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ItemDrawer(data: data[0]),
-        ItemDrawer(data: data[1]),
-        ItemDrawer(data: data[2]),
-        ItemDrawer(data: data[3]),
-      ],
+    return Expanded(
+      flex: 3,
+      child: Column(
+        children: [
+          ItemDrawer(data: data[0]),
+          ItemDrawer(data: data[1]),
+          ItemDrawer(data: data[2]),
+          ItemDrawer(data: data[3]),
+        ],
+      ),
     );
   }
 }
