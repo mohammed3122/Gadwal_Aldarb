@@ -8,35 +8,36 @@ class DrawerView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double heightScreen = MediaQuery.sizeOf(context).height;
     return Drawer(
       backgroundColor: kMainColor,
-      child: SizedBox(
-        height: 900,
-        child: Column(
-          children: [
-            // SizedBox(height: 100),
-            Spacer(flex: 4),
-            CircleAvatar(
-              backgroundColor: kMainColor,
-              radius: 80,
-              child: CircleAvatar(
-                backgroundColor: Colors.white,
-                radius: 78,
-                backgroundImage: AssetImage('assets/images/developer/m_a.png'),
-              ),
+      child: ListView(
+        physics: NeverScrollableScrollPhysics(),
+        children: [
+          // SizedBox(height: 100),
+          // Spacer(flex: 4),
+          CircleAvatar(
+            backgroundColor: kMainColor,
+            radius: 80,
+            child: CircleAvatar(
+              backgroundColor: Colors.white,
+              radius: 78,
+              backgroundImage: AssetImage('assets/images/developer/m_a.png'),
             ),
-            Text(
+          ),
+          Center(
+            child: Text(
               'Flutter Developer',
               style: TextStyle(
                 fontSize: getResponsiveFontSize(context, baseFontSize: 30),
                 color: Colors.white,
               ),
             ),
-            Spacer(flex: 1),
-            ListItemDrawer(),
-            Spacer(flex: 8),
-          ],
-        ),
+          ),
+          // Spacer(flex: 1),
+          ListItemDrawer(),
+          // Spacer(flex: 8),
+        ],
       ),
     );
   }

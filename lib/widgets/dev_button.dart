@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gadwal_aldarb_res/consts.dart';
 
 class DevButton extends StatelessWidget {
   const DevButton({super.key, required this.scafoldKey});
@@ -17,7 +18,7 @@ class DevButton extends StatelessWidget {
         ),
         child: FittedBox(
           child: IconButton(
-            icon: Icon(Icons.developer_mode, size: 35, color: Colors.blue),
+            icon: Icon(Icons.developer_mode, size: 35, color: kMainColor),
             onPressed: () {
               scafoldKey.currentState!.openDrawer();
             },
