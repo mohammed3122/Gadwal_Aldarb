@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gadwal_aldarb_res/models/drawer_item_model.dart';
+import 'package:gadwal_aldarb_res/views/gadwal_aldarb_view.dart';
 import 'package:gadwal_aldarb_res/widgets/item_drawer.dart';
 
 class ListItemDrawer extends StatelessWidget {
-  const ListItemDrawer({super.key});
+  const ListItemDrawer({super.key, required this.isDesktop});
+  final bool isDesktop;
   static List<DrawerItemModel> data = [
     DrawerItemModel(
       image: 'assets/images/social_media/linked_logo.png',
@@ -29,7 +31,9 @@ class ListItemDrawer extends StatelessWidget {
     //   flex: 3,
     //   child:
     Column(
-      children: data.map((item) => ItemDrawer(data: item)).toList(),
+      children: data
+          .map((item) => ItemDrawer(data: item, isDesktop: isDesktop))
+          .toList(),
       //   ItemDrawer(data: data[0]),
       //   ItemDrawer(data: data[1]),
       //   ItemDrawer(data: data[2]),

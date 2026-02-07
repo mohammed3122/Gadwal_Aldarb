@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gadwal_aldarb_res/helper/adaptive_layout.dart';
+import 'package:gadwal_aldarb_res/helper/functions/navigator_to_gadwal.dart';
 import 'package:gadwal_aldarb_res/helper/functions/responsive_font_size.dart';
 import 'package:gadwal_aldarb_res/layouts/desktop_layout.dart';
 import 'package:gadwal_aldarb_res/layouts/mobile_layout.dart';
@@ -12,10 +13,12 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double heightScreen = MediaQuery.sizeOf(context).width;
+    bool desktop = heightScreen >= 1024;
     GlobalKey<ScaffoldState> scafoldKey = GlobalKey();
     return Scaffold(
       key: scafoldKey,
-      drawer: DrawerView(),
+      drawer: desktop ? null : DrawerView(isDesktop: desktop),
       appBar: AppBar(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
@@ -23,7 +26,7 @@ class HomeView extends StatelessWidget {
             bottomLeft: Radius.circular(30),
           ),
         ),
-        leading: DevButton(scafoldKey: scafoldKey),
+        leading: desktop ? null : DevButton(scafoldKey: scafoldKey),
         centerTitle: true,
         titleSpacing: 9,
         backgroundColor: Color(0xff338b7a),
@@ -38,7 +41,10 @@ class HomeView extends StatelessWidget {
       ),
       body: AdaptiveLayout(
         mobileLayout: (context) => MobileLayout(),
-        tabletLayout: (context) => TabletLayout(),
+        tabletLayout: (context) => TabletLayout(
+          showGadwal: (int index) =>
+              navigatorToGadwalView(context, number: index),
+        ),
         destopLayout: (context) => DesktopLayout(),
       ),
     );

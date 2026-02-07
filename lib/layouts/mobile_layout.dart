@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gadwal_aldarb_res/helper/functions/navigator_to_gadwal.dart';
 import 'package:gadwal_aldarb_res/widgets/item_widget.dart';
 
 class MobileLayout extends StatelessWidget {
@@ -12,7 +13,11 @@ class MobileLayout extends StatelessWidget {
         int number = index + 1;
         return Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Item(number: number, index: index),
+          child: Item(
+            number: number,
+            index: index,
+            onTap: () => navigatorToGadwalView(context, number: number),
+          ),
         );
       },
     );

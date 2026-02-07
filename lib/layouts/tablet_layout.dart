@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gadwal_aldarb_res/widgets/item_widget.dart';
 
-class TabletLayout extends StatelessWidget {
-  const TabletLayout({super.key});
+typedef OnTapItem = void Function(int index);
 
+class TabletLayout extends StatelessWidget {
+  const TabletLayout({super.key, required this.showGadwal});
+  final OnTapItem showGadwal;
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -15,7 +17,11 @@ class TabletLayout extends StatelessWidget {
       ),
       itemBuilder: (context, index) {
         int number = index + 1;
-        return Item(index: index, number: number);
+        return Item(
+          index: index,
+          number: number,
+          onTap: () => showGadwal(number),
+        );
       },
     );
   }

@@ -1,31 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:gadwal_aldarb_res/consts.dart';
 import 'package:gadwal_aldarb_res/helper/functions/responsive_font_size.dart';
-import 'package:gadwal_aldarb_res/models/drawer_item_model.dart';
 
-class ItemDrawer extends StatelessWidget {
-  const ItemDrawer({super.key, required this.data, required this.isDesktop});
-  final DrawerItemModel data;
-  final bool isDesktop;
+class DarbCard extends StatelessWidget {
+  const DarbCard({super.key, required this.number, required this.index});
+  final int number, index;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 12),
 
       child: Card(
-        color: isDesktop ? kMainColor : Colors.white,
+        color: kMainColor,
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
           child: Row(
             children: [
-              CircleAvatar(radius: 25, backgroundImage: AssetImage(data.image)),
-              SizedBox(width: 6),
               Flexible(
                 child: FittedBox(
                   child: Text(
-                    data.text,
+                    '$index × $number = ${index * number}',
                     style: TextStyle(
-                      color: isDesktop ? Colors.white : Colors.black,
+                      color: Colors.black,
                       fontSize: getResponsiveFontSize(
                         context,
                         baseFontSize: 20,

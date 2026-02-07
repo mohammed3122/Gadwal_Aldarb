@@ -4,20 +4,19 @@ import 'package:gadwal_aldarb_res/helper/functions/responsive_font_size.dart';
 import 'package:gadwal_aldarb_res/widgets/list_item_drawer.dart';
 
 class DrawerView extends StatelessWidget {
-  const DrawerView({super.key});
-
+  const DrawerView({super.key, required this.isDesktop});
+  final bool isDesktop;
   @override
   Widget build(BuildContext context) {
-    double heightScreen = MediaQuery.sizeOf(context).height;
     return Drawer(
-      backgroundColor: kMainColor,
+      backgroundColor: isDesktop ? Colors.transparent : kMainColor,
       child: ListView(
         physics: NeverScrollableScrollPhysics(),
         children: [
-          // SizedBox(height: 100),
+          SizedBox(height: isDesktop ? 30 : 85),
           // Spacer(flex: 4),
           CircleAvatar(
-            backgroundColor: kMainColor,
+            backgroundColor: isDesktop ? kMainColor : Colors.white,
             radius: 80,
             child: CircleAvatar(
               backgroundColor: Colors.white,
@@ -26,16 +25,20 @@ class DrawerView extends StatelessWidget {
             ),
           ),
           Center(
-            child: Text(
-              'Flutter Developer',
-              style: TextStyle(
-                fontSize: getResponsiveFontSize(context, baseFontSize: 30),
-                color: Colors.white,
+            child: FittedBox(
+              child: Text(
+                'Flutter Developer',
+                style: TextStyle(
+                  fontSize: getResponsiveFontSize(context, baseFontSize: 30),
+                  color: isDesktop ? kMainColor : Colors.white,
+                ),
               ),
             ),
           ),
+          SizedBox(height: 10),
+
           // Spacer(flex: 1),
-          ListItemDrawer(),
+          ListItemDrawer(isDesktop: isDesktop),
           // Spacer(flex: 8),
         ],
       ),
