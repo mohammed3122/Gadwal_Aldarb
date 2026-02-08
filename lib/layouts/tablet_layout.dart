@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gadwal_aldarb_res/consts.dart';
 import 'package:gadwal_aldarb_res/widgets/item_widget.dart';
-
-typedef OnTapItem = void Function(int index);
 
 class TabletLayout extends StatelessWidget {
   const TabletLayout({super.key, required this.showGadwal});

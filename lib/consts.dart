@@ -15,3 +15,4 @@ final List<Color> kCardColors = [
   Color(0xFF3F51B5), // 11
   Color(0xFF8BC34A), // 12
 ];
+typedef OnTapItem = void Function(int number);

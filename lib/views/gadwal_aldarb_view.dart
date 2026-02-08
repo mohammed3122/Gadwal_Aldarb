@@ -5,36 +5,52 @@ import 'package:gadwal_aldarb_res/widgets/list_gadwal_darb.dart';
 
 class GadwalAldarbView extends StatelessWidget {
   const GadwalAldarbView({super.key, required this.number});
-  final dynamic number;
+  final int? number;
 
   @override
   Widget build(BuildContext context) {
-    final bool showGadwal = number == 'no yet';
-    return showGadwal
-        ? Scaffold(
-            body: Center(
-              child: Container(
-                width: 100,
-                height: 100,
-                color: Colors.red,
-                child: Text(number.toString()),
-              ),
+    double heightScreen = MediaQuery.sizeOf(context).width;
+    bool desktop = heightScreen >= 1024;
+    if (number == null) {
+      return Center(
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(50),
+            image: DecorationImage(
+              fit: BoxFit.fill,
+              image: AssetImage('assets/images/noData.png'),
             ),
-          )
-        : Scaffold(
-            appBar: AppBar(
-              iconTheme: IconThemeData(color: Colors.white),
-              centerTitle: true,
-              backgroundColor: kMainColor,
-              title: Text(
-                'جدول ضرب رقم ($number)',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: getResponsiveFontSize(context, baseFontSize: 30),
+          ),
+          width: 350,
+          height: 350,
+        ),
+      );
+    } else {
+      return Scaffold(
+        appBar: AppBar(
+          shape: desktop
+              ? RoundedRectangleBorder(
+                  borderRadius: BorderRadiusGeometry.circular(70),
+                )
+              : RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(30),
+                    bottomLeft: Radius.circular(30),
+                  ),
                 ),
-              ),
+          iconTheme: IconThemeData(color: Colors.white),
+          centerTitle: true,
+          backgroundColor: kMainColor,
+          title: Text(
+            'جدول ضرب رقم ($number)',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: getResponsiveFontSize(context, baseFontSize: 25),
             ),
-            body: ListGadwalDarb(number: number),
-          );
+          ),
+        ),
+        body: ListGadwalDarb(number: number!),
+      );
+    }
   }
 }

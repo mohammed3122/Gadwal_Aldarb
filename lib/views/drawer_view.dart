@@ -11,7 +11,7 @@ class DrawerView extends StatelessWidget {
     return Drawer(
       backgroundColor: isDesktop ? Colors.transparent : kMainColor,
       child: ListView(
-        physics: NeverScrollableScrollPhysics(),
+        // physics: NeverScrollableScrollPhysics(),
         children: [
           SizedBox(height: isDesktop ? 30 : 85),
           // Spacer(flex: 4),

@@ -8,9 +8,15 @@ import 'package:gadwal_aldarb_res/layouts/tablet_layout.dart';
 import 'package:gadwal_aldarb_res/views/drawer_view.dart';
 import 'package:gadwal_aldarb_res/widgets/dev_button.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  int? selectNumber;
   @override
   Widget build(BuildContext context) {
     double heightScreen = MediaQuery.sizeOf(context).width;
@@ -42,10 +48,17 @@ class HomeView extends StatelessWidget {
       body: AdaptiveLayout(
         mobileLayout: (context) => MobileLayout(),
         tabletLayout: (context) => TabletLayout(
-          showGadwal: (int index) =>
-              navigatorToGadwalView(context, number: index),
+          showGadwal: (int number) =>
+              navigatorToGadwalView(context, number: number),
         ),
-        destopLayout: (context) => DesktopLayout(),
+        destopLayout: (context) => DesktopLayout(
+          showGadwal: (int number) {
+            setState(() {
+              selectNumber = number;
+            });
+          },
+          number: selectNumber,
+        ),
       ),
     );
   }

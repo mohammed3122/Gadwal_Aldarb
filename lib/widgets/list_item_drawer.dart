@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gadwal_aldarb_res/models/drawer_item_model.dart';
-import 'package:gadwal_aldarb_res/views/gadwal_aldarb_view.dart';
 import 'package:gadwal_aldarb_res/widgets/item_drawer.dart';
 
 class ListItemDrawer extends StatelessWidget {

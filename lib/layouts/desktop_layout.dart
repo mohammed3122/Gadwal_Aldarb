@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:gadwal_aldarb_res/consts.dart';
 import 'package:gadwal_aldarb_res/layouts/tablet_layout.dart';
 import 'package:gadwal_aldarb_res/views/drawer_view.dart';
 import 'package:gadwal_aldarb_res/views/gadwal_aldarb_view.dart';
 
-class DesktopLayout extends StatefulWidget {
-  const DesktopLayout({super.key});
-  @override
-  State<DesktopLayout> createState() => _DesktopLayoutState();
-}
-
-class _DesktopLayoutState extends State<DesktopLayout> {
-  dynamic number = 'no yet';
+class DesktopLayout extends StatelessWidget {
+  const DesktopLayout({
+    super.key,
+    required this.showGadwal,
+    required this.number,
+  });
+  final OnTapItem showGadwal;
+  final int? number;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -18,15 +19,18 @@ class _DesktopLayoutState extends State<DesktopLayout> {
         Expanded(flex: 2, child: DrawerView(isDesktop: true)),
         Expanded(
           flex: 3,
-          child: TabletLayout(
-            showGadwal: (int index) {
-              setState(() {
-                number = index;
-              });
-            },
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: TabletLayout(showGadwal: showGadwal),
           ),
         ),
-        Expanded(flex: 2, child: GadwalAldarbView(number: number)),
+        Expanded(
+          flex: 2,
+          child: Padding(
+            padding: const EdgeInsets.only(top: 5.0, right: 10),
+            child: GadwalAldarbView(number: number),
+          ),
+        ),
       ],
     );
   }
