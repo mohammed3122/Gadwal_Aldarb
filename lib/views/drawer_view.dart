@@ -6,10 +6,13 @@ import 'package:gadwal_aldarb_res/widgets/list_item_drawer.dart';
 class DrawerView extends StatelessWidget {
   const DrawerView({super.key, required this.isDesktop});
   final bool isDesktop;
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: isDesktop ? Colors.transparent : kMainColor,
+      backgroundColor: isDesktop
+          ? Color.fromARGB(255, 195, 223, 217)
+          : kMainColor,
       child: ListView(
         // physics: NeverScrollableScrollPhysics(),
         children: [
@@ -26,6 +29,7 @@ class DrawerView extends StatelessWidget {
           ),
           Center(
             child: FittedBox(
+              fit: BoxFit.scaleDown,
               child: Text(
                 'Flutter Developer',
                 style: TextStyle(

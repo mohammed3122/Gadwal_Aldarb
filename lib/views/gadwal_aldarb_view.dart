@@ -1,17 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:gadwal_aldarb_res/consts.dart';
+import 'package:gadwal_aldarb_res/helper/functions/arabic_digits.dart';
 import 'package:gadwal_aldarb_res/helper/functions/responsive_font_size.dart';
+import 'package:gadwal_aldarb_res/helper/services/tts_service.dart';
+import 'package:gadwal_aldarb_res/views/gadwal_test_view.dart';
 import 'package:gadwal_aldarb_res/widgets/list_gadwal_darb.dart';
 
-class GadwalAldarbView extends StatelessWidget {
-  const GadwalAldarbView({super.key, required this.number});
+class GadwalAldarbView extends StatefulWidget {
+  const GadwalAldarbView({super.key, this.number});
   final int? number;
+
+  @override
+  State<GadwalAldarbView> createState() => _GadwalAldarbViewState();
+}
+
+class _GadwalAldarbViewState extends State<GadwalAldarbView> {
+  @override
+  void dispose() {
+    // ⛔ إيقاف الصوت عند الخروج من الصفحة
+    TtsService.instance.stop();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     double heightScreen = MediaQuery.sizeOf(context).width;
     bool desktop = heightScreen >= 1024;
-    if (number == null) {
+    if (widget.number == null) {
       return Center(
         child: Container(
           decoration: BoxDecoration(
@@ -27,6 +42,7 @@ class GadwalAldarbView extends StatelessWidget {
       );
     } else {
       return Scaffold(
+        backgroundColor: desktop ? Colors.transparent : null,
         appBar: AppBar(
           shape: desktop
               ? RoundedRectangleBorder(
@@ -42,14 +58,27 @@ class GadwalAldarbView extends StatelessWidget {
           centerTitle: true,
           backgroundColor: kMainColor,
           title: Text(
-            'جدول ضرب رقم ($number)',
+            'جدول ضرب (${formatArabicNumber(widget.number!)})',
             style: TextStyle(
               color: Colors.white,
               fontSize: getResponsiveFontSize(context, baseFontSize: 25),
             ),
           ),
         ),
-        body: ListGadwalDarb(number: number!),
+        body: ListGadwalDarb(number: widget.number!),
+        floatingActionButton: FloatingActionButton.extended(
+          backgroundColor: kMainColor,
+          icon: Icon(Icons.quiz, color: Colors.orange),
+          label: Text('اختبار', style: TextStyle(color: Colors.white)),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => GadwalTestView(number: widget.number!),
+              ),
+            );
+          },
+        ),
       );
     }
   }

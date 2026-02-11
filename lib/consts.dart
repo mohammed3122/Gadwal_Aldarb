@@ -2,17 +2,19 @@ import 'package:flutter/material.dart';
 
 final Color kMainColor = Color(0xff338b7a);
 final List<Color> kCardColors = [
-  Color(0xFFF44336), // 1
-  Color(0xFFFF9800), // 2
-  Color.fromARGB(255, 153, 105, 50), // 3
-  Color(0xFF4CAF50), // 4
-  Color(0xFF00BCD4), // 5
-  Color(0xFF2196F3), // 6
-  Color(0xFF9C27B0), // 7
-  Color(0xFFE91E63), // 8
-  Color(0xFF795548), // 9
-  Color(0xFF9E9E9E), // 10
-  Color(0xFF3F51B5), // 11
-  Color(0xFF8BC34A), // 12
+  Color(0xFFEF5350), // 1 - أحمر أهدى
+  Color(0xFFFFA726), // 2 - برتقالي أهدى
+  Color(0xFFB08968), // 3 - بني دافئ
+  Color(0xFF66BB6A), // 4 - أخضر مريح
+  Color(0xFF4DD0E1), // 5 - سماوي أهدى
+  Color(0xFF42A5F5), // 6 - أزرق أهدى
+  Color(0xFFAB47BC), // 7 - بنفسجي أهدى
+  Color(0xFFEC407A), // 8 - وردي أهدى
+  Color(0xFF8D6E63), // 9 - بني أهدى
+  Color(0xFFBDBDBD), // 10 - رمادي متوسط
+  Color(0xFF5C6BC0), // 11 - نيلي أهدى
+  Color(0xFF9CCC65), // 12 - أخضر ليموني أهدى
+  Color(0xFFBDBDBD), // 13 - رمادي متوسط
 ];
+
 typedef OnTapItem = void Function(int number);

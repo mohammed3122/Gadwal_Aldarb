@@ -4,7 +4,6 @@ import 'package:gadwal_aldarb_res/widgets/item_widget.dart';
 
 class MobileLayout extends StatelessWidget {
   const MobileLayout({super.key});
-
   @override
   Widget build(BuildContext context) {
     return ListView.builder(

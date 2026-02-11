@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gadwal_aldarb_res/widgets/darb_card_widget.dart';
+import 'package:gadwal_aldarb_res/widgets/card_darb_widget.dart';
 
 class ListGadwalDarb extends StatelessWidget {
   const ListGadwalDarb({super.key, required this.number});

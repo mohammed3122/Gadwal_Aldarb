@@ -10,9 +10,11 @@ class ItemDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 12),
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
 
       child: Card(
+        elevation: 5,
+        shadowColor: Colors.black,
         color: isDesktop ? kMainColor : Colors.white,
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),

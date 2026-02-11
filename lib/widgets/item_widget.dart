@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gadwal_aldarb_res/consts.dart';
+import 'package:gadwal_aldarb_res/helper/functions/arabic_digits.dart';
 import 'package:gadwal_aldarb_res/helper/functions/responsive_font_size.dart';
 
 class Item extends StatelessWidget {
@@ -17,13 +18,16 @@ class Item extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // ModalRoute Color colorDrb=
-    return InkWell(
-      onTap: onTap,
-      child: Card(
-        color: kCardColors[index],
+    return Card(
+      elevation: 5,
+      color: kCardColors[index],
+      child: InkWell(
+        borderRadius: BorderRadius.all(Radius.circular(10)),
+        highlightColor: kMainColor,
+        onTap: onTap,
         child: Center(
           child: Text(
-            number.toString(),
+            formatArabicNumber(number),
             style: TextStyle(
               color: Colors.white,
               fontSize: getResponsiveFontSize(context, baseFontSize: 100),
