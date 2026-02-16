@@ -20,7 +20,7 @@ class DarbCard extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(10)),
           highlightColor: kMainColor,
           onTap: () async {
-            await TtsService.instance.speak(
+            await Speaker.instance.speak(
               '$index في $number = ${index * number}',
             );
           },

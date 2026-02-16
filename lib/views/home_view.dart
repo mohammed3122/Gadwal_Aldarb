@@ -26,7 +26,7 @@ class _HomeViewState extends State<HomeView> {
   }
 
   Future<void> welcom() async {
-    await TtsService.instance.speak(
+    await Speaker.instance.speak(
       'السلام عليكم يا مُهابْ  \n\n\n   يَلاَّ نَختَارْ رَقَمْ عَشان نِحفَظْ جَدْوَلْ ضَرْبُهْ',
     );
   }

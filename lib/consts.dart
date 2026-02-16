@@ -11,10 +11,19 @@ final List<Color> kCardColors = [
   Color(0xFFAB47BC), // 7 - بنفسجي أهدى
   Color(0xFFEC407A), // 8 - وردي أهدى
   Color(0xFF8D6E63), // 9 - بني أهدى
-  Color(0xFFBDBDBD), // 10 - رمادي متوسط
+  Color.fromARGB(255, 150, 146, 146), // 10 - رمادي متوسط
   Color(0xFF5C6BC0), // 11 - نيلي أهدى
   Color(0xFF9CCC65), // 12 - أخضر ليموني أهدى
   Color(0xFFBDBDBD), // 13 - رمادي متوسط
 ];
 
 typedef OnTapItem = void Function(int number);
+//  BoxDecoration(
+//             gradient: LinearGradient(
+//               begin: Alignment.centerLeft,
+//               end: Alignment.centerRight,
+//               colors: [
+//                 Color(0xFF339cd2), // الأزرق
+//                 Color(0xFF2fc57f), // الأخضر
+//               ],
+//             ),

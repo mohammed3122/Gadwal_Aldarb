@@ -1,12 +1,12 @@
 import 'package:flutter_tts/flutter_tts.dart';
 
-class TtsService {
-  TtsService._() {
+class Speaker {
+  Speaker._() {
     _tts.setPitch(1.5);
     // _tts.setSpeechRate(0.45);
   }
 
-  static final TtsService instance = TtsService._();
+  static final Speaker instance = Speaker._();
   final FlutterTts _tts = FlutterTts();
 
   Future<void> speak(String text, [double? soundFast]) async {
