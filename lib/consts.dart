@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gadwal_aldarb_res/models/user_model.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 // final Color kMainColor = Color(0xff338b7a);
 final List<Color> kCardColors = [
@@ -23,3 +25,9 @@ Color kMainColor() {
   const Color end = Color(0xFF2fc57f);
   return Color.lerp(start, end, 0.5)!;
 }
+
+// final Box<WhoUser> usersBox = Hive.box<WhoUser>('users');
+// final WhoUser? savedUser = usersBox.get('current_user');
+
+final Box<WhoUser> usersBox = Hive.box<WhoUser>('users');
+final WhoUser? savedUser = usersBox.get('current_user');

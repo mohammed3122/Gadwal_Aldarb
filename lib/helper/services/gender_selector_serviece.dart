@@ -1,8 +1,7 @@
 ﻿import 'package:flutter/material.dart';
 import 'package:gadwal_aldarb_res/consts.dart';
 import 'package:gadwal_aldarb_res/helper/functions/responsive_font_size.dart';
-
-enum Gender { male, female }
+import 'package:gadwal_aldarb_res/models/select_enum_gender.dart';
 
 class GenderSelector extends StatelessWidget {
   final Gender? selectedGender;

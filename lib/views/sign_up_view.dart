@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:gadwal_aldarb_res/consts.dart';
 import 'package:gadwal_aldarb_res/helper/functions/responsive_font_size.dart';
 import 'package:gadwal_aldarb_res/helper/services/gender_selector_serviece.dart';
+import 'package:gadwal_aldarb_res/models/select_enum_gender.dart';
+import 'package:gadwal_aldarb_res/models/user_model.dart';
 import 'package:gadwal_aldarb_res/views/home_view.dart';
 import 'package:gadwal_aldarb_res/widgets/Cusotm_text_field.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 class SignUpView extends StatefulWidget {
   const SignUpView({super.key});
@@ -22,7 +25,7 @@ class _SignUpViewState extends State<SignUpView> {
     super.dispose();
   }
 
-  void _onContinue() {
+  Future<void> _onContinue() async {
     if (_nameController.text.trim().isEmpty || _selectedGender == null) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('من فضلك اكتب الاسم واختر النوع')),
@@ -30,21 +33,31 @@ class _SignUpViewState extends State<SignUpView> {
       return;
     }
 
-    Navigator.push(
+    final Box<WhoUser> usersBox = Hive.box<WhoUser>('users');
+    final WhoUser user = WhoUser(
+      name: _nameController.text.trim(),
+      gender: _selectedGender!,
+    );
+
+    await usersBox.put('current_user', user);
+
+    final WhoUser? savedUser = usersBox.get('current_user');
+    if (savedUser != null) {
+      print(
+        'Saved user => name: ${savedUser.name}, gender: ${savedUser.gender.name}',
+      );
+    }
+
+    if (!mounted) return;
+
+    Navigator.pushReplacement(
       context,
       MaterialPageRoute(
         builder: (context) {
-          return HomeView();
+          return const HomeView();
         },
       ),
     );
-    // ScaffoldMessenger.of(context).showSnackBar(
-    //   SnackBar(
-    //     content: Text(
-    //       'تم التسجيل: ${_nameController.text.trim()} - $_selectedGender',
-    //     ),
-    //   ),
-    // );
   }
 
   @override
@@ -53,7 +66,7 @@ class _SignUpViewState extends State<SignUpView> {
 
     return Scaffold(
       appBar: AppBar(
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             bottomRight: Radius.circular(30),
             bottomLeft: Radius.circular(30),
@@ -76,9 +89,9 @@ class _SignUpViewState extends State<SignUpView> {
             child: ListView(
               children: [
                 Container(
-                  height: 300,
+                  height: 250,
                   width: 250,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
                       fit: BoxFit.fill,
                       image: AssetImage('assets/images/logo_app.png'),
@@ -104,7 +117,7 @@ class _SignUpViewState extends State<SignUpView> {
                     });
                   },
                 ),
-                SizedBox(height: 25),
+                const SizedBox(height: 25),
                 ElevatedButton(
                   onPressed: _onContinue,
                   style: ElevatedButton.styleFrom(

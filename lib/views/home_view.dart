@@ -7,6 +7,7 @@ import 'package:gadwal_aldarb_res/helper/services/tts_service.dart';
 import 'package:gadwal_aldarb_res/layouts/desktop_layout.dart';
 import 'package:gadwal_aldarb_res/layouts/mobile_layout.dart';
 import 'package:gadwal_aldarb_res/layouts/tablet_layout.dart';
+import 'package:gadwal_aldarb_res/models/select_enum_gender.dart';
 import 'package:gadwal_aldarb_res/views/drawer_view.dart';
 import 'package:gadwal_aldarb_res/widgets/dev_button.dart';
 
@@ -27,9 +28,15 @@ class _HomeViewState extends State<HomeView> {
   }
 
   Future<void> welcom() async {
-    await Speaker.instance.speak(
-      'السلام عليكم يا مُهابْ  \n\n\n   يَلاَّ نَختَارْ رَقَمْ عَشان نِحفَظْ جَدْوَلْ ضَرْبُهْ',
-    );
+    if (savedUser!.gender == Gender.male) {
+      await Speaker.instance.speak(
+        'السلام عليك يا ${savedUser!.name}  \n\n\n   يَلاَّ نَختَارْ رَقَمْ عَشان نِحفَظْ جَدْوَلْ ضَرْبُهْ',
+      );
+    } else {
+      await Speaker.instance.speak(
+        'السلام عليكي يا ${savedUser!.name}  \n\n\n   يَلاَّ نَختَارْ رَقَمْ عَشان نِحفَظْ جَدْوَلْ ضَرْبُهْ',
+      );
+    }
   }
 
   @override

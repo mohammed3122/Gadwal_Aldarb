@@ -8,6 +8,7 @@ import 'package:gadwal_aldarb_res/helper/functions/get_card_darb_color.dart';
 import 'package:gadwal_aldarb_res/helper/functions/mobile&tablet_appBar_shape.dart';
 import 'package:gadwal_aldarb_res/helper/functions/responsive_font_size.dart';
 import 'package:gadwal_aldarb_res/helper/services/tts_service.dart';
+import 'package:gadwal_aldarb_res/models/select_enum_gender.dart';
 import 'package:gadwal_aldarb_res/widgets/Container_For_final_Rsult.dart';
 import 'package:gadwal_aldarb_res/widgets/custom_Container_For_Button.dart';
 import 'package:gadwal_aldarb_res/widgets/feedBack_widget.dart';
@@ -50,9 +51,20 @@ class _TypingExamState extends State<TypingExam> {
 
     if (result.isCorrect) {
       _confettiController.play();
-      Speaker.instance.speak('ممتاز');
+
+      if (savedUser!.gender == Gender.male) {
+        Speaker.instance.speak('ممتاز');
+      } else {
+        Speaker.instance.speak('ممتازَهْ');
+      }
     } else {
       Speaker.instance.speak('غَلَطْ\n\nركـزْ شُوَيَّهْ\n\n أو روحْ راجعْ');
+
+      if (savedUser!.gender == Gender.male) {
+        Speaker.instance.speak('غَلَطْ\n\nركـزْ شُوَيَّهْ\n\n أو روحْ راجعْ');
+      } else {
+        Speaker.instance.speak('غَلَطْ\n\nركـزي شُوَيَّهْ\n\n أو روحي راجعي');
+      }
     }
 
     if (result.isFinished) {

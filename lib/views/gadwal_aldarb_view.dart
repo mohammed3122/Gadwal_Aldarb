@@ -5,9 +5,12 @@ import 'package:gadwal_aldarb_res/helper/functions/desk_top_app_bar.dart';
 import 'package:gadwal_aldarb_res/helper/functions/mobile&tablet_appBar_shape.dart';
 import 'package:gadwal_aldarb_res/helper/functions/responsive_font_size.dart';
 import 'package:gadwal_aldarb_res/helper/services/tts_service.dart';
+import 'package:gadwal_aldarb_res/models/select_enum_gender.dart';
+import 'package:gadwal_aldarb_res/models/user_model.dart';
 import 'package:gadwal_aldarb_res/views/exam_view.dart';
 import 'package:gadwal_aldarb_res/views/no_gadwal_view.dart';
 import 'package:gadwal_aldarb_res/widgets/list_gadwal_darb.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 class GadwalAldarbView extends StatefulWidget {
   const GadwalAldarbView({super.key, this.number});
@@ -54,9 +57,16 @@ class _GadwalAldarbViewState extends State<GadwalAldarbView> {
         floatingActionButton: FloatingActionButton.extended(
           backgroundColor: kMainColor(),
           onPressed: () {
-            Speaker.instance.speak(
-              'شاطرْ يا مُهابْ \n\nاسْتَعِدَّ يَلَّا للإختبارْ',
-            );
+            if (savedUser!.gender == Gender.male) {
+              Speaker.instance.speak(
+                'شاطرْ يا ${savedUser!.name} \n\nاسْتَعِدَّ يَلَّا للإختبارْ',
+              );
+            } else {
+              Speaker.instance.speak(
+                'شاطْرَهْ يا ${savedUser!.name} \n\nاسْتَعِدِّي يَلَّا للإختبارْ',
+              );
+            }
+
             Navigator.push(
               context,
               MaterialPageRoute(
