@@ -28,5 +28,5 @@ Color getGadwalColor(int number) {
     case == 12:
       return kCardColors[11];
   }
-  return kMainColor;
+  return kMainColor();
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:gadwal_aldarb_res/views/gadwal_aldarb_view.dart';
 import 'package:gadwal_aldarb_res/views/home_view.dart';
-import 'package:gadwal_aldarb_res/views/typing_exam.dart';
+import 'package:gadwal_aldarb_res/views/signUp_view.dart';
 
 void main() {
   runApp(const GadwalAldarb());
@@ -26,7 +26,7 @@ class GadwalAldarb extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      home: HomeView(),
+      home: SignUpView(),
     );
   }
 }

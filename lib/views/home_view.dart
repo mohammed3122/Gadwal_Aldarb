@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gadwal_aldarb_res/consts.dart';
 import 'package:gadwal_aldarb_res/helper/adaptive_layout.dart';
 import 'package:gadwal_aldarb_res/helper/functions/navigator_to_gadwal.dart';
 import 'package:gadwal_aldarb_res/helper/functions/responsive_font_size.dart';
@@ -54,7 +55,7 @@ class _HomeViewState extends State<HomeView> {
               leading: desktop ? null : DevButton(scafoldKey: scafoldKey),
               centerTitle: true,
               titleSpacing: 18,
-              backgroundColor: Color(0xff338b7a),
+              backgroundColor: kMainColor(),
               title: Text(
                 'اختر رقم لعرض جدول ضربه',
                 style: TextStyle(

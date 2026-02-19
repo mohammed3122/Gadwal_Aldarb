@@ -18,7 +18,7 @@ class DarbCard extends StatelessWidget {
         color: getGadwalColor(number),
         child: InkWell(
           borderRadius: BorderRadius.all(Radius.circular(10)),
-          highlightColor: kMainColor,
+          highlightColor: kMainColor(),
           onTap: () async {
             await Speaker.instance.speak(
               '$index في $number = ${index * number}',

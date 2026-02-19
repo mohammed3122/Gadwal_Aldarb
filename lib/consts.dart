@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-final Color kMainColor = Color(0xff338b7a);
+// final Color kMainColor = Color(0xff338b7a);
 final List<Color> kCardColors = [
   Color(0xFFEF5350), // 1 - أحمر أهدى
   Color(0xFFFFA726), // 2 - برتقالي أهدى
@@ -18,12 +18,8 @@ final List<Color> kCardColors = [
 ];
 
 typedef OnTapItem = void Function(int number);
-//  BoxDecoration(
-//             gradient: LinearGradient(
-//               begin: Alignment.centerLeft,
-//               end: Alignment.centerRight,
-//               colors: [
-//                 Color(0xFF339cd2), // الأزرق
-//                 Color(0xFF2fc57f), // الأخضر
-//               ],
-//             ),
+Color kMainColor() {
+  const Color start = Color(0xFF339cd2);
+  const Color end = Color(0xFF2fc57f);
+  return Color.lerp(start, end, 0.5)!;
+}

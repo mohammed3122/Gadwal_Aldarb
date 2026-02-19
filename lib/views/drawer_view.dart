@@ -12,14 +12,14 @@ class DrawerView extends StatelessWidget {
     return Drawer(
       backgroundColor: isDesktop
           ? Color.fromARGB(255, 195, 223, 217)
-          : kMainColor,
+          : kMainColor(),
       child: ListView(
         // physics: NeverScrollableScrollPhysics(),
         children: [
           SizedBox(height: isDesktop ? 30 : 85),
           // Spacer(flex: 4),
           CircleAvatar(
-            backgroundColor: isDesktop ? kMainColor : Colors.white,
+            backgroundColor: isDesktop ? kMainColor() : Colors.white,
             radius: 80,
             child: CircleAvatar(
               backgroundColor: Colors.white,
@@ -34,7 +34,7 @@ class DrawerView extends StatelessWidget {
                 'Flutter Developer',
                 style: TextStyle(
                   fontSize: getResponsiveFontSize(context, baseFontSize: 30),
-                  color: isDesktop ? kMainColor : Colors.white,
+                  color: isDesktop ? kMainColor() : Colors.white,
                 ),
               ),
             ),

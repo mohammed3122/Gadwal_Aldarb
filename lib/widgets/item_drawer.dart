@@ -15,7 +15,7 @@ class ItemDrawer extends StatelessWidget {
       child: Card(
         elevation: 5,
         shadowColor: Colors.black,
-        color: isDesktop ? kMainColor : Colors.white,
+        color: isDesktop ? kMainColor() : Colors.white,
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
           child: Row(

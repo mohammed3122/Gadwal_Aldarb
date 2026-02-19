@@ -5,8 +5,8 @@ import 'package:gadwal_aldarb_res/helper/functions/desk_top_app_bar.dart';
 import 'package:gadwal_aldarb_res/helper/functions/mobile&tablet_appBar_shape.dart';
 import 'package:gadwal_aldarb_res/helper/functions/responsive_font_size.dart';
 import 'package:gadwal_aldarb_res/helper/services/tts_service.dart';
+import 'package:gadwal_aldarb_res/views/exam_view.dart';
 import 'package:gadwal_aldarb_res/views/no_gadwal_view.dart';
-import 'package:gadwal_aldarb_res/widgets/floating_action_button_dial.dart';
 import 'package:gadwal_aldarb_res/widgets/list_gadwal_darb.dart';
 
 class GadwalAldarbView extends StatefulWidget {
@@ -39,7 +39,8 @@ class _GadwalAldarbViewState extends State<GadwalAldarbView> {
           shape: desktop ? desktopAppBar() : mobileAndTabletShapeAppbar(),
           iconTheme: IconThemeData(color: Colors.white),
           centerTitle: true,
-          backgroundColor: kMainColor,
+
+          backgroundColor: kMainColor(),
           title: Text(
             'جدول الضرب (${formatArabicNumber(widget.number!)})',
             style: TextStyle(
@@ -50,7 +51,23 @@ class _GadwalAldarbViewState extends State<GadwalAldarbView> {
         ),
         body: ListGadwalDarb(number: widget.number!),
         floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-        floatingActionButton: FlatingActionButtonDial(widget: widget),
+        floatingActionButton: FloatingActionButton.extended(
+          backgroundColor: kMainColor(),
+          onPressed: () {
+            Speaker.instance.speak(
+              'شاطرْ يا مُهابْ \n\nاسْتَعِدَّ يَلَّا للإختبارْ',
+            );
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return TypingExam(number: widget.number!);
+                },
+              ),
+            );
+          },
+          label: Icon(Icons.quiz, color: Colors.white, size: 35),
+        ),
       );
     }
   }

@@ -23,7 +23,7 @@ class Item extends StatelessWidget {
       color: kCardColors[index],
       child: InkWell(
         borderRadius: BorderRadius.all(Radius.circular(10)),
-        highlightColor: kMainColor,
+        highlightColor: kMainColor(),
         onTap: onTap,
         child: Center(
           child: Text(

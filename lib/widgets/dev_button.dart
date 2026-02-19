@@ -12,13 +12,13 @@ class DevButton extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         decoration: BoxDecoration(
-          boxShadow: [BoxShadow(color: Colors.blue, blurRadius: 7)],
+          boxShadow: [BoxShadow(color: Colors.white, blurRadius: 7)],
           color: Colors.white,
           borderRadius: BorderRadius.circular(50),
         ),
         child: FittedBox(
           child: IconButton(
-            icon: Icon(Icons.developer_mode, size: 35, color: kMainColor),
+            icon: Icon(Icons.developer_mode, size: 35, color: kMainColor()),
             onPressed: () {
               scafoldKey.currentState!.openDrawer();
             },
