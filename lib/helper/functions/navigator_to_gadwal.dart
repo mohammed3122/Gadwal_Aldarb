@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:gadwal_aldarb_res/consts.dart';
-import 'package:gadwal_aldarb_res/models/select_enum_gender.dart';
-import 'package:gadwal_aldarb_res/views/gadwal_aldarb_view.dart';
-import 'package:gadwal_aldarb_res/helper/services/tts_service.dart';
+import 'package:gadwal_aldarb/consts.dart';
+import 'package:gadwal_aldarb/models/select_enum_gender.dart';
+import 'package:gadwal_aldarb/views/gadwal_aldarb_view.dart';
+import 'package:gadwal_aldarb/helper/services/tts_service.dart';
 
 void navigatorToGadwalView(BuildContext context, {required int number}) {
   if (savedUser!.gender == Gender.male) {

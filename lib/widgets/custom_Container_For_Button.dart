@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gadwal_aldarb_res/helper/functions/responsive_font_size.dart';
+import 'package:gadwal_aldarb/helper/functions/responsive_font_size.dart';
 
 class CusotmContainer extends StatelessWidget {
   const CusotmContainer({super.key});

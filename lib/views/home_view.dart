@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:gadwal_aldarb_res/consts.dart';
-import 'package:gadwal_aldarb_res/helper/adaptive_layout.dart';
-import 'package:gadwal_aldarb_res/helper/functions/navigator_to_gadwal.dart';
-import 'package:gadwal_aldarb_res/helper/functions/responsive_font_size.dart';
-import 'package:gadwal_aldarb_res/helper/services/tts_service.dart';
-import 'package:gadwal_aldarb_res/layouts/desktop_layout.dart';
-import 'package:gadwal_aldarb_res/layouts/mobile_layout.dart';
-import 'package:gadwal_aldarb_res/layouts/tablet_layout.dart';
-import 'package:gadwal_aldarb_res/models/select_enum_gender.dart';
-import 'package:gadwal_aldarb_res/views/drawer_view.dart';
-import 'package:gadwal_aldarb_res/widgets/dev_button.dart';
+import 'package:gadwal_aldarb/consts.dart';
+import 'package:gadwal_aldarb/helper/adaptive_layout.dart';
+import 'package:gadwal_aldarb/helper/functions/navigator_to_gadwal.dart';
+import 'package:gadwal_aldarb/helper/functions/responsive_font_size.dart';
+import 'package:gadwal_aldarb/helper/services/tts_service.dart';
+import 'package:gadwal_aldarb/layouts/desktop_layout.dart';
+import 'package:gadwal_aldarb/layouts/mobile_layout.dart';
+import 'package:gadwal_aldarb/layouts/tablet_layout.dart';
+import 'package:gadwal_aldarb/models/select_enum_gender.dart';
+import 'package:gadwal_aldarb/views/drawer_view.dart';
+import 'package:gadwal_aldarb/widgets/dev_button.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});

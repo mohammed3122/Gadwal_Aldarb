@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:gadwal_aldarb_res/helper/functions/arabic_digits.dart';
+import 'package:gadwal_aldarb/helper/functions/arabic_digits.dart';
 
 class TypingExamLogic {
   TypingExamLogic({required this.number}) {

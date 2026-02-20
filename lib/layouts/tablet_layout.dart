@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gadwal_aldarb_res/consts.dart';
-import 'package:gadwal_aldarb_res/widgets/item_widget.dart';
+import 'package:gadwal_aldarb/consts.dart';
+import 'package:gadwal_aldarb/widgets/item_widget.dart';
 
 class TabletLayout extends StatelessWidget {
   const TabletLayout({super.key, required this.showGadwal});

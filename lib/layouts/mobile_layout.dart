@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gadwal_aldarb_res/helper/functions/navigator_to_gadwal.dart';
-import 'package:gadwal_aldarb_res/widgets/item_widget.dart';
+import 'package:gadwal_aldarb/helper/functions/navigator_to_gadwal.dart';
+import 'package:gadwal_aldarb/widgets/item_widget.dart';
 
 class MobileLayout extends StatelessWidget {
   const MobileLayout({super.key});

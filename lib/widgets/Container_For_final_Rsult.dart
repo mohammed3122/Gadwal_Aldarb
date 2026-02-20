@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gadwal_aldarb_res/controllers/exam_controller.dart';
-import 'package:gadwal_aldarb_res/helper/functions/arabic_digits.dart';
-import 'package:gadwal_aldarb_res/helper/functions/responsive_font_size.dart';
+import 'package:gadwal_aldarb/controllers/exam_controller.dart';
+import 'package:gadwal_aldarb/helper/functions/arabic_digits.dart';
+import 'package:gadwal_aldarb/helper/functions/responsive_font_size.dart';
 
 class FinalRseult extends StatelessWidget {
   const FinalRseult({super.key, required this.logic});

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:gadwal_aldarb_res/consts.dart';
-import 'package:gadwal_aldarb_res/layouts/tablet_layout.dart';
-import 'package:gadwal_aldarb_res/views/drawer_view.dart';
-import 'package:gadwal_aldarb_res/views/gadwal_aldarb_view.dart';
+import 'package:gadwal_aldarb/consts.dart';
+import 'package:gadwal_aldarb/layouts/tablet_layout.dart';
+import 'package:gadwal_aldarb/views/drawer_view.dart';
+import 'package:gadwal_aldarb/views/gadwal_aldarb_view.dart';
 
 class DesktopLayout extends StatelessWidget {
   const DesktopLayout({

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gadwal_aldarb_res/consts.dart';
-import 'package:gadwal_aldarb_res/helper/functions/responsive_font_size.dart';
-import 'package:gadwal_aldarb_res/models/drawer_item_model.dart';
+import 'package:gadwal_aldarb/consts.dart';
+import 'package:gadwal_aldarb/helper/functions/responsive_font_size.dart';
+import 'package:gadwal_aldarb/models/drawer_item_model.dart';
 
 class ItemDrawer extends StatelessWidget {
   const ItemDrawer({super.key, required this.data, required this.isDesktop});

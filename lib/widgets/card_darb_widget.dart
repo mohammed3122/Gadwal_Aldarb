@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:gadwal_aldarb_res/consts.dart';
-import 'package:gadwal_aldarb_res/helper/functions/arabic_digits.dart';
-import 'package:gadwal_aldarb_res/helper/functions/get_card_darb_color.dart';
-import 'package:gadwal_aldarb_res/helper/functions/responsive_font_size.dart';
-import 'package:gadwal_aldarb_res/helper/services/tts_service.dart';
+import 'package:gadwal_aldarb/consts.dart';
+import 'package:gadwal_aldarb/helper/functions/arabic_digits.dart';
+import 'package:gadwal_aldarb/helper/functions/get_card_darb_color.dart';
+import 'package:gadwal_aldarb/helper/functions/responsive_font_size.dart';
+import 'package:gadwal_aldarb/helper/services/tts_service.dart';
 
 class DarbCard extends StatelessWidget {
   const DarbCard({super.key, required this.number, required this.index});

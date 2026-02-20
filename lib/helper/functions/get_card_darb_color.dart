@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gadwal_aldarb_res/consts.dart';
+import 'package:gadwal_aldarb/consts.dart';
 
 Color getGadwalColor(int number) {
   switch (number) {

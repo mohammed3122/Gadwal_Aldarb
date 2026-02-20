@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gadwal_aldarb_res/consts.dart';
-import 'package:gadwal_aldarb_res/helper/functions/responsive_font_size.dart';
-import 'package:gadwal_aldarb_res/helper/functions/text_field_shape.dart';
+import 'package:gadwal_aldarb/consts.dart';
+import 'package:gadwal_aldarb/helper/functions/responsive_font_size.dart';
+import 'package:gadwal_aldarb/helper/functions/text_field_shape.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({

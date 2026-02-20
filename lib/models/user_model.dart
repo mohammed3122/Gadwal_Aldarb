@@ -1,5 +1,4 @@
-import 'package:gadwal_aldarb_res/helper/services/gender_selector_serviece.dart';
-import 'package:gadwal_aldarb_res/models/select_enum_gender.dart';
+import 'package:gadwal_aldarb/models/select_enum_gender.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 part 'user_model.g.dart';
 

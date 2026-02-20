@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gadwal_aldarb_res/models/user_model.dart';
+import 'package:gadwal_aldarb/models/user_model.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 // final Color kMainColor = Color(0xff338b7a);

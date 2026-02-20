@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gadwal_aldarb_res/controllers/exam_controller.dart';
-import 'package:gadwal_aldarb_res/helper/functions/responsive_font_size.dart';
+import 'package:gadwal_aldarb/controllers/exam_controller.dart';
+import 'package:gadwal_aldarb/helper/functions/responsive_font_size.dart';
 
 class FeedBackWidget extends StatelessWidget {
   const FeedBackWidget({super.key, required this.logic});
