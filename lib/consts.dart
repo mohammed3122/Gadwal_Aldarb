@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gadwal_aldarb/models/user_model.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 
-// final Color kMainColor = Color(0xff338b7a);
+// ألوان الكروت
 final List<Color> kCardColors = [
   Color(0xFFEF5350), // 1 - أحمر أهدى
   Color(0xFFFFA726), // 2 - برتقالي أهدى
@@ -18,16 +16,13 @@ final List<Color> kCardColors = [
   Color(0xFF9CCC65), // 12 - أخضر ليموني أهدى
   Color(0xFFBDBDBD), // 13 - رمادي متوسط
 ];
-
+// ====================================================
+// for tablet & desktop layout :
 typedef OnTapItem = void Function(int number);
+// ====================================================
+// For main color :
 Color kMainColor() {
   const Color start = Color(0xFF339cd2);
   const Color end = Color(0xFF2fc57f);
   return Color.lerp(start, end, 0.5)!;
 }
-
-// final Box<WhoUser> usersBox = Hive.box<WhoUser>('users');
-// final WhoUser? savedUser = usersBox.get('current_user');
-
-final Box<WhoUser> usersBox = Hive.box<WhoUser>('users');
-final WhoUser? savedUser = usersBox.get('current_user');

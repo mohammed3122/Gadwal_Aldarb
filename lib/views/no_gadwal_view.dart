@@ -11,7 +11,7 @@ class NoGadwalDarbView extends StatelessWidget {
           borderRadius: BorderRadius.circular(50),
           image: DecorationImage(
             fit: BoxFit.fill,
-            image: AssetImage('assets/images/noData.png'),
+            image: AssetImage('assets/images/no_gadwal.png'),
           ),
         ),
         width: 350,

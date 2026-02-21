@@ -8,6 +8,7 @@ import 'package:gadwal_aldarb/helper/functions/get_card_darb_color.dart';
 import 'package:gadwal_aldarb/helper/functions/mobile&tablet_appBar_shape.dart';
 import 'package:gadwal_aldarb/helper/functions/responsive_font_size.dart';
 import 'package:gadwal_aldarb/helper/services/tts_service.dart';
+import 'package:gadwal_aldarb/helper/services/user_services.dart';
 import 'package:gadwal_aldarb/models/select_enum_gender.dart';
 import 'package:gadwal_aldarb/widgets/Container_For_final_Rsult.dart';
 import 'package:gadwal_aldarb/widgets/custom_Container_For_Button.dart';
@@ -38,6 +39,7 @@ class _TypingExamState extends State<TypingExam> {
   @override
   void dispose() {
     _confettiController.dispose();
+    Speaker.instance.stop();
     super.dispose();
   }
 
@@ -52,15 +54,13 @@ class _TypingExamState extends State<TypingExam> {
     if (result.isCorrect) {
       _confettiController.play();
 
-      if (savedUser!.gender == Gender.male) {
+      if (UserService.getCurrentUser()!.gender == Gender.male) {
         Speaker.instance.speak('ممتاز');
       } else {
         Speaker.instance.speak('ممتازَهْ');
       }
     } else {
-      Speaker.instance.speak('غَلَطْ\n\nركـزْ شُوَيَّهْ\n\n أو روحْ راجعْ');
-
-      if (savedUser!.gender == Gender.male) {
+      if (UserService.getCurrentUser()!.gender == Gender.male) {
         Speaker.instance.speak('غَلَطْ\n\nركـزْ شُوَيَّهْ\n\n أو روحْ راجعْ');
       } else {
         Speaker.instance.speak('غَلَطْ\n\nركـزي شُوَيَّهْ\n\n أو روحي راجعي');

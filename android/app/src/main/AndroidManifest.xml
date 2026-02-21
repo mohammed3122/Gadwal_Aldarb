@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
-        android:label="gadwal_aldarb_res"
+        android:label="جدول الضرب"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

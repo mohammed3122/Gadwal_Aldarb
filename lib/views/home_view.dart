@@ -3,17 +3,16 @@ import 'package:gadwal_aldarb/consts.dart';
 import 'package:gadwal_aldarb/helper/adaptive_layout.dart';
 import 'package:gadwal_aldarb/helper/functions/navigator_to_gadwal.dart';
 import 'package:gadwal_aldarb/helper/functions/responsive_font_size.dart';
-import 'package:gadwal_aldarb/helper/services/tts_service.dart';
+import 'package:gadwal_aldarb/helper/functions/welcom_speak.dart';
 import 'package:gadwal_aldarb/layouts/desktop_layout.dart';
 import 'package:gadwal_aldarb/layouts/mobile_layout.dart';
 import 'package:gadwal_aldarb/layouts/tablet_layout.dart';
-import 'package:gadwal_aldarb/models/select_enum_gender.dart';
 import 'package:gadwal_aldarb/views/drawer_view.dart';
 import 'package:gadwal_aldarb/widgets/dev_button.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
-
+  static String id = 'HomeView';
   @override
   State<HomeView> createState() => _HomeViewState();
 }
@@ -25,18 +24,6 @@ class _HomeViewState extends State<HomeView> {
   void initState() {
     super.initState();
     welcom();
-  }
-
-  Future<void> welcom() async {
-    if (savedUser!.gender == Gender.male) {
-      await Speaker.instance.speak(
-        'السلام عليك يا ${savedUser!.name}  \n\n\n   يَلاَّ نَختَارْ رَقَمْ عَشان نِحفَظْ جَدْوَلْ ضَرْبُهْ',
-      );
-    } else {
-      await Speaker.instance.speak(
-        'السلام عليكي يا ${savedUser!.name}  \n\n\n   يَلاَّ نَختَارْ رَقَمْ عَشان نِحفَظْ جَدْوَلْ ضَرْبُهْ',
-      );
-    }
   }
 
   @override

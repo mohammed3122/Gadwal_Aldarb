@@ -5,6 +5,7 @@ import 'package:gadwal_aldarb/helper/functions/desk_top_app_bar.dart';
 import 'package:gadwal_aldarb/helper/functions/mobile&tablet_appBar_shape.dart';
 import 'package:gadwal_aldarb/helper/functions/responsive_font_size.dart';
 import 'package:gadwal_aldarb/helper/services/tts_service.dart';
+import 'package:gadwal_aldarb/helper/services/user_services.dart';
 import 'package:gadwal_aldarb/models/select_enum_gender.dart';
 import 'package:gadwal_aldarb/views/exam_view.dart';
 import 'package:gadwal_aldarb/views/no_gadwal_view.dart';
@@ -22,7 +23,6 @@ class GadwalAldarbView extends StatefulWidget {
 class _GadwalAldarbViewState extends State<GadwalAldarbView> {
   @override
   void dispose() {
-    // ⛔ إيقاف الصوت عند الخروج من الصفحة
     Speaker.instance.stop();
     super.dispose();
   }
@@ -55,13 +55,17 @@ class _GadwalAldarbViewState extends State<GadwalAldarbView> {
         floatingActionButton: FloatingActionButton.extended(
           backgroundColor: kMainColor(),
           onPressed: () {
-            if (savedUser!.gender == Gender.male) {
+            String finalName = UserService.getCurrentUser()!.name.replaceFirst(
+              'م',
+              'مُ',
+            );
+            if (UserService.getCurrentUser()!.gender == Gender.male) {
               Speaker.instance.speak(
-                'شاطرْ يا ${savedUser!.name} \n\nاسْتَعِدَّ يَلَّا للإختبارْ',
+                'شاطرْ يا $finalNameْ \n\nاسْتَعِدَّ يَلَّا للإختبارْ',
               );
             } else {
               Speaker.instance.speak(
-                'شاطْرَهْ يا ${savedUser!.name} \n\nاسْتَعِدِّي يَلَّا للإختبارْ',
+                'شاطْرَهْ يا $finalNameْ \n\nاسْتَعِدِّي يَلَّا للإختبارْ',
               );
             }
 
