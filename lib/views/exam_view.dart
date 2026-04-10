@@ -23,9 +23,14 @@ class TypingExam extends StatefulWidget {
   State<TypingExam> createState() => _TypingExamState();
 }
 
-class _TypingExamState extends State<TypingExam> {
-  late ConfettiController _confettiController;
+class _TypingExamState extends State<TypingExam> with TickerProviderStateMixin {
+  // late ConfettiController _confettiController;
   late TypingExamLogic logic;
+  late ConfettiController _confettiController;
+
+  // Shake animation
+  late AnimationController _shakeController;
+  late Animation<double> _shakeAnimation;
 
   @override
   void initState() {
@@ -34,11 +39,21 @@ class _TypingExamState extends State<TypingExam> {
     _confettiController = ConfettiController(
       duration: const Duration(seconds: 1),
     );
+
+    _shakeController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 500),
+    );
+    _shakeAnimation = Tween<double>(
+      begin: 0,
+      end: 10,
+    ).chain(CurveTween(curve: Curves.elasticIn)).animate(_shakeController);
   }
 
   @override
   void dispose() {
     _confettiController.dispose();
+    _shakeController.dispose();
     Speaker.instance.stop();
     super.dispose();
   }

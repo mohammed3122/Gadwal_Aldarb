@@ -1,6 +1,14 @@
-class DrawerItemModel {
-  final String image;
-  final String text;
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-  DrawerItemModel({required this.image, required this.text});
+class DrawerItemModel {
+  final FaIconData icon;
+  final String text;
+  final Color iconColor;
+
+  DrawerItemModel({
+    required this.icon,
+    required this.text,
+    required this.iconColor,
+  });
 }

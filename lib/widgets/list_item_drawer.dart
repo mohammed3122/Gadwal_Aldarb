@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gadwal_aldarb/models/drawer_item_model.dart';
 import 'package:gadwal_aldarb/widgets/item_drawer.dart';
 
@@ -7,20 +8,24 @@ class ListItemDrawer extends StatelessWidget {
   final bool isDesktop;
   static List<DrawerItemModel> data = [
     DrawerItemModel(
-      image: 'assets/images/social_media/linked_logo.png',
+      iconColor: Color(0xff0061c4),
+      icon: FontAwesomeIcons.linkedin,
       text: 'Mohammad Abd-Allatif',
     ),
     DrawerItemModel(
-      image: 'assets/images/social_media/tle_logp.png',
+      icon: FontAwesomeIcons.telegram,
       text: 'MohammadAwd3',
+      iconColor: Color(0xff26a2e0),
     ),
     DrawerItemModel(
-      image: 'assets/images/social_media/whats_logp.jpg',
+      iconColor: Color(0xff35dd54),
+      icon: FontAwesomeIcons.whatsapp,
       text: '01288128468',
     ),
     DrawerItemModel(
-      image: 'assets/images/social_media/facebook_logo.png',
-      text: 'مُحـمَّـد عبداللطيف عوض',
+      icon: FontAwesomeIcons.facebook,
+      text: 'مُحـمَّـد عبداللطيف عوض',
+      iconColor: Color(0xff4267B2),
     ),
   ];
   @override
