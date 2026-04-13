@@ -22,7 +22,7 @@ class ItemDrawer extends StatelessWidget {
               borderRadius: BorderRadius.circular(30),
             ),
           ),
-          onPressed: () {},
+          onPressed: data.onTap,
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
             child: Row(

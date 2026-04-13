@@ -29,23 +29,12 @@ class DrawerView extends StatelessWidget {
               backgroundImage: AssetImage('assets/images/developer/m_a.png'),
             ),
           ),
-          Center(
-            child: FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text(
-                'Flutter Developer',
-                style: TextStyle(
-                  fontSize: getResponsiveFontSize(context, baseFontSize: 30),
-                  color: isDesktop ? kMainColor() : Colors.white,
-                ),
-              ),
-            ),
-          ),
-          SizedBox(height: 10),
+
+          SizedBox(height: 20),
           ListItemDrawer(isDesktop: isDesktop),
-          SizedBox(height: 15),
+          SizedBox(height: 20),
           OurMessageBtn(isDesktop: isDesktop),
-          SizedBox(height: 50),
+          SizedBox(height: 80),
           AtharModev(isDesktop: isDesktop),
           SizedBox(height: 5),
           Center(
