@@ -83,7 +83,7 @@ Future<void> launchWhatsApp({
   }
 }
 
-Future<void> launchLinkedInAndFaceBookAndTelegram({
+Future<void> launchLinkedInAndFaceBookAndTelegramAndOther({
   required String url,
   required String errorMessage,
   required BuildContext context,

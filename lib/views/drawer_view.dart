@@ -4,6 +4,7 @@ import 'package:gadwal_aldarb/helper/functions/responsive_font_size.dart';
 import 'package:gadwal_aldarb/widgets/athar_modev.dart';
 import 'package:gadwal_aldarb/widgets/list_item_drawer.dart';
 import 'package:gadwal_aldarb/widgets/our_message.dart';
+import 'package:gadwal_aldarb/widgets/our_other_apps.dart';
 
 class DrawerView extends StatelessWidget {
   const DrawerView({super.key, required this.isDesktop});
@@ -18,7 +19,7 @@ class DrawerView extends StatelessWidget {
       child: ListView(
         // physics: NeverScrollableScrollPhysics(),
         children: [
-          SizedBox(height: isDesktop ? 30 : 50),
+          SizedBox(height: 30),
           // Spacer(flex: 4),
           CircleAvatar(
             backgroundColor: isDesktop ? kMainColor() : Colors.white,
@@ -30,11 +31,13 @@ class DrawerView extends StatelessWidget {
             ),
           ),
 
-          SizedBox(height: 20),
+          SizedBox(height: 10),
           ListItemDrawer(isDesktop: isDesktop),
-          SizedBox(height: 20),
+          SizedBox(height: 5),
           OurMessageBtn(isDesktop: isDesktop),
-          SizedBox(height: 80),
+          SizedBox(height: 20),
+          OurOtherApps(isDesktop: isDesktop),
+          SizedBox(height: 15),
           AtharModev(isDesktop: isDesktop),
           SizedBox(height: 5),
           Center(

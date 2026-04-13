@@ -16,7 +16,7 @@ class ListItemDrawer extends StatelessWidget {
         icon: FontAwesomeIcons.linkedin,
         text: 'Mohammad Abd-Allatif',
         onTap: () {
-          launchLinkedInAndFaceBookAndTelegram(
+          launchLinkedInAndFaceBookAndTelegramAndOther(
             url: 'https://www.linkedin.com/in/mohammad-awd-3m',
             errorMessage: 'عذرا .. لا يمكن فتح تطبيق لينكد إن ',
             context: context,
@@ -28,7 +28,7 @@ class ListItemDrawer extends StatelessWidget {
         text: 'MohammadAwd3',
         iconColor: Color(0xff26a2e0),
         onTap: () {
-          launchLinkedInAndFaceBookAndTelegram(
+          launchLinkedInAndFaceBookAndTelegramAndOther(
             url: 'https://t.me/MohammadAwd3',
             errorMessage: 'عذرا .. لا يمكن فتح تطبيق التليجرام ',
             context: context,
@@ -49,7 +49,7 @@ class ListItemDrawer extends StatelessWidget {
       ),
       DrawerItemModel(
         onTap: () {
-          launchLinkedInAndFaceBookAndTelegram(
+          launchLinkedInAndFaceBookAndTelegramAndOther(
             url: 'https://www.facebook.com/mohammad.awd.2025',
             errorMessage: 'عذرا .. لا يمكن فتح تطبيق التليجرام ',
             context: context,

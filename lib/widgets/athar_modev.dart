@@ -14,7 +14,7 @@ class AtharModev extends StatelessWidget {
       child: InkWell(
         borderRadius: BorderRadius.circular(25),
         onTap: () {
-          launchLinkedInAndFaceBookAndTelegram(
+          launchLinkedInAndFaceBookAndTelegramAndOther(
             url: 'https://www.facebook.com/profile.php?id=61572170937759',
             errorMessage: 'عذرا .. لا يمكن فتح تطبيق الفيسبوك ',
             context: context,
@@ -26,7 +26,7 @@ class AtharModev extends StatelessWidget {
             borderRadius: BorderRadius.circular(25),
             color: isDesktop
                 ? kMainColor().withValues(alpha: 0.5)
-                : Colors.white.withValues(alpha: 0.65),
+                : Color(0xfff4f1f9),
             image: DecorationImage(
               image: AssetImage('assets/images/athar_modev_small.png'),
               fit: BoxFit.contain,

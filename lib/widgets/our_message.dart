@@ -28,10 +28,11 @@ class OurMessageBtn extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
           child: Center(
             child: Text(
-              'رسالـتـنا',
+              'رِسالـتـنا 💚',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: isDesktop ? Colors.white : Colors.black,
+                color: Color(0xff00c064),
+                // isDesktop ? Colors.white : Colors.black,
                 fontSize: getResponsiveFontSize(context, baseFontSize: 20),
               ),
             ),
