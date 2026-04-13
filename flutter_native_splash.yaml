@@ -85,8 +85,8 @@ flutter_native_splash:
 
   # general branding for all platform (except android 12+):
   # allows you to specify an image used as branding in the splash screen. should be png.
-  branding:      assets/images/athar_modev_small.png
-  branding_dark: assets/images/athar_modev_small.png
+  branding:      assets/images/MoDevForBrading.png
+  branding_dark: assets/images/MoDevForBrading.png
   # platform-specific branding. will override general branding if active:
   #branding_android:      assets/brand-android.png
   #branding_dark_android: assets/dart_dark-android.png
@@ -151,5 +151,5 @@ flutter_native_splash:
 
     # branding:
     # The branding image dimensions must be 800x320 px.
-    branding: assets/images/athar_modev_small.png
-    branding_dark: assets/images/athar_modev_small.png
+    branding: assets/images/MoDevForBrading.png
+    branding_dark: assets/images/MoDevForBrading.png
